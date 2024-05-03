@@ -1,0 +1,18 @@
+// Définir le chemin vers le dossier contenant les fichiers de police
+$chemin-polices: "./src/assets/fonts/";
+@font-face {
+  font-family: "Satoshi_Regular";
+  src: url("#{$chemin-polices}Satoshi-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi_Medium";
+  src: url("#{$chemin-polices}Satoshi-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Satoshi_Bold";
+  src: url("#{$chemin-polices}Satoshi-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}

@@ -1,0 +1,43 @@
+#title {
+  display: flex;
+  justify-content: center;
+  font-family: Satoshi;
+  color: $color2;
+  font-size: 2.188rem;
+}
+
+#title::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  top: calc(47.5px / 2);
+  left: 0;
+  background-color: $color2;
+  transform-origin: bottom right;
+}
+
+#title::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  width: 218px;
+  height: 2.188rem;
+  background-color: $color1;
+}
+
+@media only screen and (min-width: 48em) {
+  #title {
+    font-size: 3.75rem;
+
+    &::before {
+      height: 3px;
+      top: calc(81.5px / 2);
+    }
+    &::after {
+      width: 386px;
+      height: 3.75rem;
+    }
+  }
+}

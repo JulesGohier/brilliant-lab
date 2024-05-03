@@ -1,0 +1,19 @@
+// Base
+@import "src/scss/base/reset";
+@import "src/scss/base/colors";
+@import "src/scss/base/typography";
+
+// Utilities
+@import "src/scss/utilities/variables";
+@import "src/scss/utilities/mixins";
+@import "src/scss/utilities/functions";
+
+// Layout
+@import "src/scss/layout/title";
+@import "src/scss/layout/description";
+@import "src/scss/layout/navbar";
+@import "src/scss/layout/cards";
+
+body {
+  background-color: $color1;
+}

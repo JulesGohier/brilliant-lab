@@ -1,0 +1,24 @@
+name: 🚀 Deploy website for production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploy to Production Server
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: SCP deploy action
+        uses: nogsantos/ssh-scp-deploy@v1.3.0
+        with:
+          src: dist/*
+          host: ${{ secrets.SSH_HOST }}
+          remote: ${{ secrets.SSH_DIR_PUBLIC_HTML }}
+          port: ${{ secrets.SSH_PORT }}
+          user: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}

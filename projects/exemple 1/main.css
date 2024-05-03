@@ -1,0 +1,123 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Satoshi_Regular";
+  src: url("./src/assets/fonts/Satoshi-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Satoshi_Medium";
+  src: url("./src/assets/fonts/Satoshi-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Satoshi_Bold";
+  src: url("./src/assets/fonts/Satoshi-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+#desktop {
+  display: none;
+  grid-template-areas: "aside  app";
+  grid-template-columns: 200px auto;
+  height: 100vh;
+}
+
+#mobile {
+  background-color: #fef5e4;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#mobile > p {
+  text-align: justify;
+  font-family: "Satoshi_Regular";
+  font-size: 1.25rem;
+  color: #001857;
+  padding-inline: 50px;
+}
+
+#app {
+  grid-area: app;
+  background-color: #fef5e4;
+  height: 100%;
+  position: relative;
+}
+
+.lateralBar {
+  font-family: "Satoshi_Regular";
+  font-size: 1.25rem;
+  grid-area: aside;
+  background-color: #001857;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.lateralBar__languages, .lateralBar__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.lateralBar__languages__items,
+.lateralBar__link__items {
+  text-align: center;
+  background-color: #fef5e4;
+  color: #001857;
+  width: 120%;
+  height: 120%;
+  padding-block: 5px;
+  padding-inline: 10px;
+  margin-block: 10px;
+  border-radius: 10px;
+}
+
+.lateralBar__link__items {
+  background-color: #f582ae;
+  color: #fef5e4;
+}
+
+#head_project {
+  font-family: "Satoshi_Regular";
+  color: #001857;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+#head_project > h2 {
+  font-family: "Satoshi_Regular";
+  font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 64rem) {
+  #desktop {
+    display: grid;
+  }
+  #mobile {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

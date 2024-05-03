@@ -1,0 +1,172 @@
+#app {
+  display: flex;
+  width: 100%;
+
+  margin-top: 20px;
+  justify-content: center;
+
+  row-gap: 20px;
+  column-gap: 30px;
+
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: $color2;
+  width: 320px;
+  height: 160px;
+
+  color: $color1;
+
+  border-radius: 10px;
+  display: grid;
+  grid-template-areas:
+    "title title"
+    "description description"
+    "language button";
+
+  grid-template-rows: 20% auto 30%;
+  grid-template-columns: auto 30%;
+}
+
+.card > header {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card > main {
+  grid-area: description;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card__languageUse {
+  grid-area: language;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-left: 10px;
+  &__name {
+    background-color: $color1;
+    padding-block: 2px;
+    padding-inline: 5px;
+    margin-right: 10px;
+
+    border-radius: 3px;
+  }
+}
+
+.card__buttonStart {
+  grid-area: button;
+}
+
+.card__title {
+  font-family: "Satoshi_Regular";
+  font-size: 1.25rem;
+}
+
+.card__description {
+  font-family: "Satoshi_Regular";
+  font-size: 0.8rem;
+  overflow-wrap: break-word;
+  width: max(270px);
+}
+
+.card__languageUse,
+.card__buttonStart {
+  font-size: 0.8rem;
+  font-family: "Satoshi_Regular";
+
+  color: $color2;
+}
+
+.card__title {
+  padding-top: 10px;
+}
+
+.card__description {
+  text-align: center;
+  margin-inline: auto;
+  padding-inline: 5px;
+}
+
+.card__buttonStart {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: 100%;
+  height: 100%;
+
+  & > a {
+    background-color: $color3;
+    color: $color1;
+    padding-block: 2px;
+    padding-inline: 5px;
+    border-radius: 3px;
+
+    margin-right: 10px;
+  }
+
+  & > a:hover {
+    background-color: $color3_hover;
+  }
+}
+
+@media only screen and (min-width: 48em) {
+  #app {
+    margin-top: 50px;
+
+    row-gap: 60px;
+    column-gap: 90px;
+  }
+
+  .card {
+    width: 615px;
+    height: 289px;
+    border-radius: 20px;
+  }
+
+  .card__title {
+    font-size: 1.875rem;
+  }
+
+  .card__languageUse,
+  .card__buttonStart {
+    font-size: 1.25rem;
+  }
+
+  .card__buttonStart {
+    & > a {
+      padding-block: 5px;
+      padding-inline: 10px;
+      border-radius: 10px;
+
+      margin-right: 20px;
+    }
+  }
+
+  .card__description {
+    font-size: 1.25rem;
+    width: max(555px);
+    padding-inline: 30px;
+  }
+
+  .card__languageUse {
+    margin-left: 30px;
+    &__name {
+      padding-block: 5px;
+      padding-inline: 10px;
+      margin-right: 10px;
+
+      border-radius: 10px;
+    }
+  }
+}

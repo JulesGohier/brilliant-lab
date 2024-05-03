@@ -1,0 +1,91 @@
+#desktop {
+  display: none;
+  grid-template-areas: "aside  app";
+
+  grid-template-columns: 200px auto;
+
+  height: 100vh;
+}
+
+#mobile {
+  background-color: $color1;
+  height: 100vh;
+  width: 100vw;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > p {
+    text-align: justify;
+    font-family: "Satoshi_Regular";
+    font-size: 1.25rem;
+    color: $color2;
+    padding-inline: 50px;
+  }
+}
+
+#app {
+  grid-area: app;
+  background-color: $color1;
+  height: 100%;
+  position: relative;
+}
+
+.lateralBar {
+  font-family: "Satoshi_Regular";
+  font-size: 1.25rem;
+  grid-area: aside;
+  background-color: $color2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__languages,
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-block: 10px;
+  }
+}
+
+.lateralBar__languages__items,
+.lateralBar__link__items {
+  text-align: center;
+  background-color: $color1;
+  color: $color2;
+  width: 120%;
+  height: 120%;
+  padding-block: 5px;
+  padding-inline: 10px;
+  margin-block: 10px;
+  border-radius: 10px;
+}
+
+.lateralBar__link__items {
+  background-color: $color3;
+  color: $color1;
+}
+
+#head_project {
+  font-family: "Satoshi_Regular";
+  color: $color2;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+  & > h2 {
+    font-family: "Satoshi_Regular";
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  #desktop {
+    display: grid;
+  }
+
+  #mobile {
+    display: none;
+  }
+}
